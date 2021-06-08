@@ -1,13 +1,13 @@
-const https = require("https")
+const http = require("http")
 
 const data = JSON.stringify({
-  todo: "Buy the milk",
+  todo: "Go home",
 })
 
 const options = {
-  hostname: "ptsv2.com",
-  port: 443,
-  path: "/t/6xfhn-1623115697/post",
+  hostname: "127.0.0.1",
+  port: 8080,
+  path: "/post",
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -15,7 +15,7 @@ const options = {
   },
 }
 
-const req = https.request(options, (res) => {
+const req = http.request(options, (res) => {
   console.log(`statusCode: ${res.statusCode}`)
 
   res.on("data", (d) => {
