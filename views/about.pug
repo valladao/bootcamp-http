@@ -1,0 +1,20 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='Some description')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+  body
+    p#title Hello from #{getName()}
+    p.title This is second paragraph...
+
+    ul
+      each color in ['Red', 'Yellow', 'Blue']
+        li= color
+
+    ul
+      each color, index in ['Red', 'Yellow', 'Blue']
+        li= 'Color number ' + index + ': ' + color
+
+    script alert('test')
